@@ -42,7 +42,6 @@ Before running any scripts, you **must set up your Gemini API Key**.
    ```
    GEMINI_API_KEY=your_api_key_here
    ```
-*(Note: Do NOT commit the `.env` file to version control. It is already added to `.gitignore` to prevent accidental leaks.)*
 
 ## Installation
 
@@ -72,4 +71,4 @@ python evaluate_all.py
   1. `[DocumentName]_base.txt` (Raw OCR)
   2. `[DocumentName]_post.txt` (Corrected Post-Processed OCR)
   3. `[DocumentName]_gt.txt` (Ground truth OCR)
-* Finally, it produces a `final_summary.txt` in the `results/` directory containing absolute CER and WER accuracies across all documents combined.
+* Finally, it produces a `final_summary.txt` in the `results/` directory containing absolute CER and WER accuracies across all documents combined. Additionally, it is important to note that Character Error Rate (CER) and Word Error Rate (WER) may not be the most appropriate evaluation metrics in this context. Although manual verification indicates that the extracted documents are highly accurate, minor alignment differences can disproportionately inflate CER and WER scores. Therefore, it would be beneficial to explore more suitable metrics that better reflect the true quality of the extracted content.
